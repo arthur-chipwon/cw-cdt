@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="detectionParticipant" name="%extension-point.name" schema="schema/participant.exsd"/>
+ <extension
+       id="CompileCommandsJsonParserMarker"
+       name="%CompileCommandsJsonParserMarker.name"
+       point="org.eclipse.core.resources.markers">
+    <persistent
+          value="false">
+    </persistent>
+    <super
+          type="org.eclipse.core.resources.problemmarker">
+    </super>
+ </extension>
+ <extension
+       id="CompilerBuiltinsDetectorMarker"
+       name="%CompilerBuiltinsDetectorMarker.name"
+       point="org.eclipse.core.resources.markers">
+    <super type="org.eclipse.cdt.jsoncdb.core.CompileCommandsJsonParserMarker"/>
+ </extension>
+</plugin>
