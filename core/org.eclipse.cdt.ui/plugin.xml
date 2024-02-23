@@ -460,7 +460,7 @@
          <description>
              %Cproject.desc
          </description>
-      </wizard>
+       </wizard>
        <wizard
              canFinishEarly="false"
              category="org.eclipse.cdt.ui.newCWizards"
@@ -474,6 +474,20 @@
           <description>
              %CDTproject.desc
           </description>
+       </wizard>
+       <wizard
+             canFinishEarly="false"
+             category="org.eclipse.cdt.ui.newCWizards"
+             class="org.eclipse.cdt.ui.wizards.CProjectWizard"
+             finalPerspective="org.eclipse.cdt.ui.CPerspective"
+             hasPages="true"
+             icon="icons/elcl16/newcwligc_app.gif"
+             id="org.eclipse.cdt.ui.wizards.NewCWLICWizard"
+             name="%CWLICProject"
+             project="true">
+         <description>
+             %CWLICProject.desc
+         </description>
        </wizard>
    </extension>
 

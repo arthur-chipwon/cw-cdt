@@ -42,6 +42,7 @@ public class CWizardRegistry {
 	private final static String ATT_CFOLDER = "cfolder";//$NON-NLS-1$
 	private final static String ATT_CPROJECT = "cproject";//$NON-NLS-1$
 	private final static String ATT_CCPROJECT = "ccproject";//$NON-NLS-1$
+	private final static String ATT_CWLICPROJECT = "cwlicproject";//$NON-NLS-1$
 	private final static String TAG_CLASS = "class"; //$NON-NLS-1$
 	private final static String TAG_ID = "id"; //$NON-NLS-1$
 	private final static String PL_NEW = "newWizards"; //$NON-NLS-1$
@@ -120,7 +121,8 @@ public class CWizardRegistry {
 				IConfigurationElement[] paramElements = classElement.getChildren(TAG_PARAMETER);
 				for (IConfigurationElement curr : paramElements) {
 					String name = curr.getAttribute(TAG_NAME);
-					if (name != null && (name.equals(ATT_CPROJECT) || name.equals(ATT_CCPROJECT))) {
+					if (name != null && (name.equals(ATT_CPROJECT) || name.equals(ATT_CCPROJECT)
+							|| name.equals(ATT_CWLICPROJECT))) {
 						String value = curr.getAttribute(TAG_VALUE);
 						if (value != null)
 							return Boolean.valueOf(value).booleanValue();
