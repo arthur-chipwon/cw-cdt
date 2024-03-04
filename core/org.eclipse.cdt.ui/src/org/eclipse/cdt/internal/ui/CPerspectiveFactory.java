@@ -78,8 +78,9 @@ public class CPerspectiveFactory implements IPerspectiveFactory {
 		String[] wizIDs = CWizardRegistry.getProjectWizardIDs();
 		for (int i = 0; i < wizIDs.length; ++i) {
 			// Hide the C Project and C++ Project wizards until we can remove them
-			if (!wizIDs[i].endsWith(".NewCWizard1") && !wizIDs[i].endsWith(".NewCWizard2") //$NON-NLS-1$ //$NON-NLS-2$
-					&& !wizIDs[i].endsWith(".NewCWLICWizard")) { //$NON-NLS-3$
+			if (!wizIDs[i].endsWith(".NewCWizard1") //$NON-NLS-1$
+					&& !wizIDs[i].endsWith(".NewCWizard2") //$NON-NLS-1$
+					&& !wizIDs[i].endsWith(".NewCWLICWizard")) { //$NON-NLS-1$
 				layout.addNewWizardShortcut(wizIDs[i]);
 			}
 		}
