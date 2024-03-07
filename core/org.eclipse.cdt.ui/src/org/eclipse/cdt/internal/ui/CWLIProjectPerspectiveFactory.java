@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2015 IBM Corporation and others.
+ * Copyright (c) 2023 ChirpWow Technology Co., Ltd.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -9,9 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *     IBM Corporation - initial API and implementation
- *     QNX Software System
- *     Anton Leherbauer (Wind River Systems)
+ *     Arthur Hsiao - ChirpWow Tech.
  *******************************************************************************/
 package org.eclipse.cdt.internal.ui;
 
@@ -24,11 +22,11 @@ import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.navigator.resources.ProjectExplorer;
 
-public class CPerspectiveFactory implements IPerspectiveFactory {
+public class CWLIProjectPerspectiveFactory implements IPerspectiveFactory {
 	/**
 	 * Constructs a new Default layout engine.
 	 */
-	public CPerspectiveFactory() {
+	public CWLIProjectPerspectiveFactory() {
 		super();
 	}
 
@@ -77,6 +75,7 @@ public class CPerspectiveFactory implements IPerspectiveFactory {
 		// new actions - C project creation wizard
 		String[] wizIDs = CWizardRegistry.getProjectWizardIDs();
 		for (int i = 0; i < wizIDs.length; ++i) {
+			System.out.println("ProjectWizardID:\"" + wizIDs[i] + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 			// Hide the C Project and C++ Project wizards until we can remove them
 			if (!wizIDs[i].endsWith(".NewCWizard1") //$NON-NLS-1$
 					&& !wizIDs[i].endsWith(".NewCWizard2")) { //$NON-NLS-1$
@@ -86,16 +85,19 @@ public class CPerspectiveFactory implements IPerspectiveFactory {
 		// new actions - C folder creation wizard
 		wizIDs = CWizardRegistry.getFolderWizardIDs();
 		for (int i = 0; i < wizIDs.length; ++i) {
+			System.out.println("FolderWizardID:\"" + wizIDs[i] + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 			layout.addNewWizardShortcut(wizIDs[i]);
 		}
 		// new actions - C file creation wizard
 		wizIDs = CWizardRegistry.getFileWizardIDs();
 		for (int i = 0; i < wizIDs.length; ++i) {
+			System.out.println("FileWizardID:\"" + wizIDs[i] + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 			layout.addNewWizardShortcut(wizIDs[i]);
 		}
 		// new actions - C type creation wizard
 		wizIDs = CWizardRegistry.getTypeWizardIDs();
 		for (int i = 0; i < wizIDs.length; ++i) {
+			System.out.println("TypeWizardID:\"" + wizIDs[i] + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 			layout.addNewWizardShortcut(wizIDs[i]);
 		}
 	}

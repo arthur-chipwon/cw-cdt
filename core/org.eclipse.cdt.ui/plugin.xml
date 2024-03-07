@@ -265,6 +265,12 @@
             class="org.eclipse.cdt.internal.ui.CPerspectiveFactory"
             id="org.eclipse.cdt.ui.CPerspective">
       </perspective>
+      <perspective
+            name="%CWLIProjectPerspective.name"
+            icon="icons/view16/cwli_proj_pers.gif"
+            class="org.eclipse.cdt.internal.ui.CWLIProjectPerspectiveFactory"
+            id="org.eclipse.cdt.ui.CWLIProjectPerspective">
+      </perspective>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
@@ -436,6 +442,20 @@
       <wizard
             canFinishEarly="false"
             category="org.eclipse.cdt.ui.newCWizards"
+            class="org.eclipse.cdt.internal.ui.wizards.project.NewCDTProjectWizard"
+            finalPerspective="org.eclipse.cdt.ui.CPerspective"
+            hasPages="true"
+            icon="icons/elcl16/newmngc_app.gif"
+            id="org.eclipse.cdt.ui.wizards.project"
+            name="%CDTproject"
+            project="true">
+         <description>
+             %CDTproject.desc
+         </description>
+      </wizard>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.cdt.ui.newCWizards"
             class="org.eclipse.cdt.ui.wizards.CCProjectWizard"
             finalPerspective="org.eclipse.cdt.ui.CPerspective"
             hasPages="true"
@@ -443,52 +463,52 @@
             id="org.eclipse.cdt.ui.wizards.NewCWizard1"
             name="%CPPproject"
             project="true">
-          <description>
-             %CPPproject.desc
-          </description>
-       </wizard>
-       <wizard
-             canFinishEarly="false"
-             category="org.eclipse.cdt.ui.newCWizards"
-             class="org.eclipse.cdt.ui.wizards.CProjectWizard"
-             finalPerspective="org.eclipse.cdt.ui.CPerspective"
-             hasPages="true"
-             icon="icons/elcl16/newmngc_app.gif"
-             id="org.eclipse.cdt.ui.wizards.NewCWizard2"
-             name="%Cproject"
-             project="true">
          <description>
-             %Cproject.desc
+            %CPPproject.desc
          </description>
-       </wizard>
-       <wizard
-             canFinishEarly="false"
-             category="org.eclipse.cdt.ui.newCWizards"
-             class="org.eclipse.cdt.internal.ui.wizards.project.NewCDTProjectWizard"
-             finalPerspective="org.eclipse.cdt.ui.CPerspective"
-             hasPages="true"
-             icon="icons/elcl16/newmngc_app.gif"
-             id="org.eclipse.cdt.ui.wizard.project"
-             name="%CDTproject"
-             project="true">
-          <description>
-             %CDTproject.desc
-          </description>
-       </wizard>
-       <wizard
-             canFinishEarly="false"
-             category="org.eclipse.cdt.ui.newCWizards"
-             class="org.eclipse.cdt.ui.wizards.CProjectWizard"
-             finalPerspective="org.eclipse.cdt.ui.CPerspective"
-             hasPages="true"
-             icon="icons/elcl16/newcwligc_app.gif"
-             id="org.eclipse.cdt.ui.wizards.NewCWLICWizard"
-             name="%CWLICProject"
-             project="true">
+      </wizard>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.cdt.ui.newCWizards"
+            class="org.eclipse.cdt.ui.wizards.CProjectWizard"
+            finalPerspective="org.eclipse.cdt.ui.CPerspective"
+            hasPages="true"
+            icon="icons/elcl16/newmngc_app.gif"
+            id="org.eclipse.cdt.ui.wizards.NewCWizard2"
+            name="%Cproject"
+            project="true">
          <description>
-             %CWLICProject.desc
+            %Cproject.desc
          </description>
-       </wizard>
+      </wizard>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.cdt.ui.newCWizards"
+            class="org.eclipse.cdt.internal.ui.wizards.example.NewCWLIExampleWizard"
+            finalPerspective="org.eclipse.cdt.ui.CPerspective"
+            hasPages="true"
+            icon="icons/elcl16/newcwligc_app.gif"
+            id="org.eclipse.cdt.ui.wizards.example"
+            name="%CWLICExampleProject"
+            project="true">
+         <description>
+            %CWLICExampleProject.desc
+         </description>
+      </wizard>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.cdt.ui.newCWizards"
+            class="org.eclipse.cdt.ui.wizards.CProjectWizard"
+            finalPerspective="org.eclipse.cdt.ui.CPerspective"
+            hasPages="true"
+            icon="icons/elcl16/newcwligc_app.gif"
+            id="org.eclipse.cdt.ui.wizards.NewCWLICWizard"
+            name="%CWLICProject"
+            project="true">
+         <description>
+            %CWLICProject.desc
+         </description>
+      </wizard>
    </extension>
 
 <!-- Define the document setup participant for the C/C++ and Assembly Editors -->
@@ -4078,7 +4098,7 @@
 	         associatedExtensionId="org.eclipse.cdt.ui.navigator.content"
 	         menuGroupId="org.eclipse.cdt.ui.newProject"
 	         type="new"
-	         wizardId="org.eclipse.cdt.ui.wizard.project">
+	         wizardId="org.eclipse.cdt.ui.wizards.project">
 		 <enablement>
 		 	<or>
 	         	<with variable="activeWorkbenchWindow.activePerspective">

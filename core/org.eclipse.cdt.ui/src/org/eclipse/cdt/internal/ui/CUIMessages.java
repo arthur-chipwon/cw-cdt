@@ -95,6 +95,8 @@ public final class CUIMessages extends NLS {
 	public static String CUIPlugin_initPrefs;
 	public static String NewCDTProjectWizard_PageTitle;
 	public static String NewCDTProjectWizard_Title;
+	public static String NewCWLIExampleWizard_PageTitle;
+	public static String NewCWLIExampleWizard_Title;
 	public static String NewToolChainWizard_Title;
 
 	public static String NewToolChainWizardSelectionPage_Description;
